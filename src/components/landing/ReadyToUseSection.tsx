@@ -4,6 +4,7 @@
  */
 
 import { PackageCard } from "./PackageCard";
+import { SectionHeader } from "./SectionHeader";
 import { 
   SiNextdotjs,
   SiTailwindcss,
@@ -55,14 +56,10 @@ const readyToUsePackages = [
 export function ReadyToUseSection() {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-      <div className="text-center mb-16 sm:mb-20 max-w-4xl mx-auto">
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          Technologies intégrées
-        </h3>
-        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-          Un starter kit minimaliste avec les technologies essentielles pour démarrer rapidement
-        </p>
-      </div>
+      <SectionHeader
+        title="Technologies intégrées"
+        subtitle="Un starter kit minimaliste avec les technologies essentielles pour démarrer rapidement"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {readyToUsePackages.map((packageItem, index) => (
           <PackageCard
@@ -77,4 +74,4 @@ export function ReadyToUseSection() {
       </div>
     </section>
   );
-} 
+}

@@ -26,19 +26,30 @@ export function OnboardingSection() {
           {' '}et codez immédiatement !
         </>
       )
+    },
+    {
+      number: 3,
+      title: "Personnalisez",
+      description: (
+        <>
+          Adaptez les composants et styles à votre identité visuelle.
+        </>
+      )
     }
   ];
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
-      <h2 className="text-4xl sm:text-5xl font-bold text-center text-gray-900 dark:text-white mb-8">
+    <section id="onboarding" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 dark:text-white mb-8">
         Lancez votre projet en 3 étapes simples
       </h2>
       
-      <ol className="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-center w-full max-w-4xl">
+      <ol className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-center w-full max-w-4xl">
+        {/* ligne de liaison sur grand écran */}
+        <div aria-hidden className="hidden md:block absolute left-1/2 top-8 -translate-x-1/2 h-1 w-3/4 bg-gradient-to-r from-blue-600/40 to-purple-600/40 rounded-full" />
         {steps.map((step) => (
-          <li key={step.number} className="flex flex-col items-center text-center flex-1">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center mb-4 shadow-lg">
+          <li key={step.number} className="relative flex flex-col items-center text-center flex-1">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center mb-4 shadow-lg ring-2 ring-white/40 dark:ring-gray-900/40">
               <span className="text-white text-2xl font-bold">
                 {step.number}
               </span>
@@ -54,4 +65,4 @@ export function OnboardingSection() {
       </ol>
     </section>
   );
-} 
+}

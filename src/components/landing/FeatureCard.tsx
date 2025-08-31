@@ -15,8 +15,8 @@ export function FeatureCard({ feature }: { feature: Feature }) {
   const IconComponent = feature.icon;
   
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-      <div className={`flex items-center justify-center w-14 h-14 ${feature.bgColor} rounded-xl mb-6`}>
+    <div className="flex flex-col items-center justify-center h-full bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:ring-1 hover:ring-blue-500/20 dark:hover:ring-blue-400/20 transition-all duration-300 hover:-translate-y-1">
+      <div className={`flex items-center justify-center w-14 h-14 ${feature.bgColor} rounded-xl mb-6 ring-1 ring-black/5 dark:ring-white/10`}>
         <IconComponent className={`w-7 h-7 ${feature.iconColor}`} />
       </div>
       <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">
@@ -27,4 +27,4 @@ export function FeatureCard({ feature }: { feature: Feature }) {
       </p>
     </div>
   );
-} 
+}

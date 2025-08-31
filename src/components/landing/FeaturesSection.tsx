@@ -4,6 +4,7 @@
  */
 
 import { FeatureCard } from "./FeatureCard";
+import { SectionHeader } from "./SectionHeader";
 import { 
   SiNextdotjs,
   SiTailwindcss,
@@ -37,14 +38,11 @@ const mainFeatures = [
 export function FeaturesSection() {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-      <div className="text-center mb-16 sm:mb-20 max-w-4xl mx-auto">
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          Tout ce dont vous avez besoin
-        </h3>
-        <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-          Une base solide pour vos projets web modernes
-        </p>
-      </div>
+      <SectionHeader
+        id="features"
+        title="Tout ce dont vous avez besoin"
+        subtitle="Un starter kit pensé pour créer rapidement un site web moderne: une page vitrine élégante ou un site complet multi‑pages, avec la possibilité d’ajouter facilement une section actualités/blog et une bibliothèque de contenus."
+      />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-7xl mx-auto">
         {mainFeatures.map((feature, index) => (
@@ -53,4 +51,4 @@ export function FeaturesSection() {
       </div>
     </section>
   );
-} 
+}
